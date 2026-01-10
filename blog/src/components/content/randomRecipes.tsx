@@ -36,15 +36,18 @@ export default function RandomRecipes() {
     <section className="overflow-hidden">
       <motion.div
         ref={sliderRef}
-        className="cursor-grab overflow-hidden pl-3"
+        className="cursor-grab overflow-hidden"
         whileTap={{ cursor: "grabbing" }}
       >
-        <header>
-          <h2 className="font-bold text-lg mb-4">Latest Recipes</h2>
+        <header className="flex justify-between items-centerp px-3 pb-4">
+          <h2 className="font-bold text-lg">Latest Recipes</h2>
+          <button className="rounded-lg bg-muted text-muted-foreground px-4 py-2 text-sm hover:bg-foreground/10 hover:text-foreground transition-all">
+            View all
+          </button>
         </header>
 
         <motion.div
-          className="flex gap-4"
+          className="flex gap-4 pl-3"
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
         >

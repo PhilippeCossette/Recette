@@ -1,13 +1,19 @@
 import { useState } from "react";
-import MainMenu from "./components/navigation/MainMenu";
-import RandomRecipes from "./components/content/randomRecipes";
+import { Route, Routes } from "react-router";
+import MainLayout from "./components/layouts/MainLayout";
+import NoMenuLayout from "./components/layouts/NoMenuLayout";
+import HomePage from "./components/pages/HomePage";
 
 function App() {
   return (
-    <div>
-      <MainMenu />
-      <RandomRecipes />
-    </div>
+    <Routes>
+      {/* Routes With Menu */}
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<HomePage />} />
+      </Route>
+      {/* Routes Without Menu */}
+      <Route element={<NoMenuLayout />}>{/* Routes like login */}</Route>
+    </Routes>
   );
 }
 export default App;
